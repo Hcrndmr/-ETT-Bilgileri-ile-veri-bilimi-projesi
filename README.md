@@ -20,7 +20,7 @@ Bash
 pip install pandas numpy matplotlib seaborn scikit-learn ipykernel notebook
 
 # 3. Veri Setini Yerleştirin
-İBB Açık Veri Portalı'ndan indirdiğiniz veya proje için hazırlanan güncel toplu taşıma veri setini içeren CSV dosyasının adını veri.csv olarak değiştirin.
+İBB Açık Veri Portalı'ndan indirdiğiniz veya proje için hazırlanan güncel toplu taşıma veri setini içeren CSV dosyasının adını ibb_toplu_tasima_veri_seti.csv olarak değiştirin.
 
 Bu dosyayı, analiz.ipynb dosyasının bulunduğu kök dizine (aynı klasör içine) kopyalayın.
 
@@ -36,3 +36,7 @@ Pandas & NumPy: Veri setinin yüklenmesi, eksik verilerin (NaN) doldurulması, v
 Matplotlib & Seaborn: Projenin teknik gereksinimlerinde yer alan en az 4 farklı grafik türünün (Line Plot, Bar Plot, Pie Chart, Box Plot) ve model sonuçlarının yüksek kaliteli, Türkçe etiketli görselleştirmeleri için kullanılmıştır.
 
 Scikit-Learn (sklearn): Verilerin K-Means modeline girmeden önce ölçeklendirilmesi (StandardScaler) ve saatlik yolcu trafiğinin 3 farklı yoğunluk kümesine ayrılması için kullanılmıştır.
+
+
+### Lisans bilgileri: https://data.ibb.gov.tr/license
+                      https://data.ibb.gov.tr/dataset/hourly-public-transport-data-set/resource/75e25417-36df-4822-8a18-578f0f7a584a
