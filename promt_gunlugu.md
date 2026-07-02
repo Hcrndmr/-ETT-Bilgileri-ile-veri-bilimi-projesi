@@ -3,24 +3,46 @@
 
 Bu günlük, projenin geliştirilmesi esnasında yapay zeka asistanına verilen önemli komutları ve alınan sonuçları kronolojik sırayla içermektedir.
 
-### 📌 1. Adım: Veri Yükleme ve Temizleme
-* **Kullanım Amacı:** Veri setini doğru tiplere dönüştürmek ve aykırı değerleri temizlemek.
-* **Gönderilen Prompt:**
-    > "Elimde İBB toplu taşıma veri seti şeması var. Pandas kullanarak veri setini yükleyen, `transition_date` alanını datetime formatına, `transition_hour` alanını integer'a çeviren bir kod yazar mısın? Ayrıca `number_of_passage` ve `number_of_passenger` sütunlarındaki eksik değerleri 0 ile doldursun ve IQR yöntemiyle yolcu sayısındaki aşırı uç değerleri (outliers) temizlesin. Her satırı yorum satırıyla açıkla."
-* **Alınan Sonuç:** Tip dönüşümleri tamamlandı, IQR filtresiyle hatalı veri girişleri temizlendi.
+Prompt 1:
+Elimde İBB toplu taşıma veri seti şeması var. Pandas kullanarak veri setini yükleyen, transition_date alanını datetime formatına, transition_hour alanını integer'a çeviren bir kod yazar mısın? Ayrıca number_of_passage ve number_of_passenger sütunlarındaki eksik değerleri 0 ile doldursun ve IQR yöntemiyle yolcu sayısındaki aşırı uç değerleri (outliers) temizlesin. Her satırı yorum satırıyla açıkla.
+***Başlangıç aşaması***
 
----
+prompt 2:
+Yukarıdaki İBB veri seti için şu 3 araştırma sorusunu yanıtlamak istiyorum: 1- Günün hangi saatlerinde yoğunluk zirve yapıyor? 2- En çok tercih edilen ulaşım ve transfer türü hangisi? 3- Kart türlerine göre yolculuk dağılımları nasıl? Bu soruları yanıtlamak için Seaborn ve Matplotlib kullanarak Line Plot, Bar Plot, Pie Chart ve Boxplot içeren 4 farklı görselleştirme kodu yazar mısın?
+***İncelenen soruları yazdım***
 
-### 📌 2. Adım: Keşifsel Veri Analizi (EDA) ve Araştırma Soruları
-* **Kullanım Amacı:** Belirlenen 3 araştırma sorusuna yönelik 4 farklı grafik türü üretmek.
-* **Gönderilen Prompt:**
-    > "Yukarıdaki İBB veri seti için şu 3 araştırma sorusunu yanıtlamak istiyorum: 1- Günün hangi saatlerinde yoğunluk zirve yapıyor? 2- En çok tercih edilen ulaşım ve transfer türü hangisi? 3- Kart türlerine göre yolculuk dağılımları nasıl? Bu soruları yanıtlamak için Seaborn ve Matplotlib kullanarak Line Plot, Bar Plot, Pie Chart ve Boxplot içeren 4 farklı görselleştirme kodu yazar mısın?"
-* **Alınan Sonuç:** Saatlik yoğunluk çizgisi, ulaşım türü bar grafiği, aktarma oranları pastası ve kart türü kutu grafikleri başarıyla oluşturuldu.
+prompt 3:
+yazdığım kodu nasıl çalıştıracağım
+***python ile yazdım ve visual studio ortamında çalıştıramadım. Aldığım hataları yazdım ve visual studio AI ile birlikte sıfırdan jupyter dosyası oluşturdum***
 
----
+prompt 4:
+S C:\Users\hicra\OneDrive\Masaüstü\veri ödevi> python analiz.py
+Traceback (most recent call last):
+  File "C:\Users\hicra\OneDrive\Masaüstü\veri ödevi\analiz.py", line 1, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+PS C:\Users\hicra\OneDrive\Masaüstü\veri ödevi> 
 
-### 📌 3. Adım: Modelleme (K-Means Kümeleme)
-* **Kullanım Amacı:** Saatleri ve yolcu yoğunluklarını yapılandırılmamış şekilde gruplamak.
-* **Gönderilen Prompt:**
-    > "İBB toplu taşıma veri setiindeki `transition_hour`, `number_of_passage` ve `number_of_passenger` özelliklerini (features) kullanarak saatleri ve yoğunlukları K-Means algoritması ile 3 farklı yoğunluk kümesine (Sakin, Orta, Yoğun) ayıran bir Scikit-Learn kodu yazar mısın? Modeli kurmadan önce StandardScaler ile veriyi ölçeklendir (scale) ve sonuçları bir scatter plot üzerinde görselleştir."
-* **Alınan Sonuç:** İstanbul içi "Yoğun-Orta-Sakin" saat/bölge kırılımlarını gösteren K-Means modeli kuruldu ve scatter plot ile görselleştirildi.
+prompt 5:
+Python Pandas kullanarak veri.csv isimli bir İBB toplu taşıma veri setini yükleyen bir kod yazar mısın? Veri şemasındaki transition_date alanını datetime formatına, transition_hour alanını integer'a çevirsin. number_of_passage ve number_of_passenger sütunlarındaki eksik değerleri (NaN) 0 ile doldursun ve IQR yöntemiyle yolcu sayısındaki aykırı değerleri (outliers) temizlesin. Kod bloklarındaki her satırı yorum satırıyla açıkla.
+***aykırı değerler temizlenir***
+
+prompt 6:
+yalnız ben bütün kodu python uzantılı dosyaya yazdım jupyter nootbooka nasıl çeviririm
+***hatamı yazdım***
+
+prompt 7:
+Extension 'vscode.ipynb' is not known or not activated. View Jupyter log for further details.
+***visual studio code un bana ilettiği hataları yazdım***
+
+
+prompt 8:
+tamam sil baştan yapalım şunu
+***tekrardan jupyter dosyası açarak projeye devam ettim. Yukarıda aldığım çıktıları jupyter dosyasına ekledim***
+
+
+prompt 9:
+şimdi bu jpynb uzantılı çalışmayı nasıl çalıştıracam
+***jupyter dosyasını nasıl çalıştıracağımı yapay zekaya sordum***
+
+***Bu noktadan sonra koddaki hataları düzeltmek için prompt yazmaya devam ettim***
